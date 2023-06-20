@@ -15,9 +15,14 @@ wget -O gpt2_bpe/vocab.bpe https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab
 GLUE benchmark
 ``` python download_glue_data.py --data_dir glue_data --tasks all ```
 
+### Preprocess
+```
+python sample.py --number_clients 10 --input_dir ./wikitext-103-raw/ --output_dir ./datasets_clients
+bash preprocess.sh
+```
+
 ### Train
 ```
-bash preprocess.sh
 bash avg-train.sh
 bash emdavg-train.sh
 bash head_emd-train.sh
